@@ -79,21 +79,22 @@ for importRule in moveRules:
 		typ, data = conn.search(None, '(%s)' % importFilter["imap_filter"])
 		msgList = data[0].split()
 
-		print "Copying %s messages. Please wait..." % len(msgList)
-		for msgId in msgList:
-			typ, data = conn.fetch(msgId, '(RFC822)')
-			print "Copying message from %s" % email.message_from_string(data[0][1])["From"]
-			conn2.append("%s" % importFilter["dest"],
-				'',
-				imaplib.Time2Internaldate(time.time()),
-				str(email.message_from_string(data[0][1]))
-			)
-
-			if importFilter["mark_deleted"] == True:
-				# Mark mail as deleted
-				conn.store(msgId,'+FLAGS','\\Deleted')
-
-		print "%s messages imported." % len(msgList)
+		if len(msgList) > 0:
+			print "Copying %s messages. Please wait..." % len(msgList)
+			for msgId in msgList:
+				typ, data = conn.fetch(msgId, '(RFC822)')
+				print "Copying message from %s" % email.message_from_string(data[0][1])["From"]
+				conn2.append("%s" % importFilter["dest"],
+					'',
+					imaplib.Time2Internaldate(time.time()),
+					str(email.message_from_string(data[0][1]))
+				)
+	
+				if importFilter["mark_deleted"] == True:
+					# Mark mail as deleted
+					conn.store(msgId,'+FLAGS','\\Deleted')
+	
+			print "%s messages imported." % len(msgList)
 
 	# Clear all the DELETED flagged mails
 	conn.expunge()
