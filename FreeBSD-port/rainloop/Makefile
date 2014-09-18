@@ -17,6 +17,13 @@ WANT_PHP_WEB=   yes
 USE_PHP=	curl iconv json xml dom openssl pcre spl
 # @TODO: PDO also for different backends
 
+EXTRACT_CMD=	unzip
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
+	@${EXTRACT_CMD} -d ${WRKSRC} ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} > /dev/null
+
 do-install:
 	@${MKDIR} -m 0755 ${STAGEDIR}${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
