@@ -14,7 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 WANT_PHP_WEB=   yes
-USE_PHP=	curl iconv json xml dom openssl pcre spl
+USE_PHP=	curl iconv json xml dom openssl pcre spl zlib
 # @TODO: PDO also for different backends
 
 EXTRACT_CMD=	unzip
