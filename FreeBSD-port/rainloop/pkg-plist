@@ -1030,6 +1030,7 @@
 %%WWWDIR%%/rainloop/v/1.6.9.164/themes/Xv/images/background.png
 %%WWWDIR%%/rainloop/v/1.6.9.164/themes/Xv/images/preview.png
 %%WWWDIR%%/rainloop/v/1.6.9.164/themes/Xv/styles.less
+@exec /usr/sbin/chown -R www:www %D/%%WWWDIR%%/data
 @dirrmtry %%WWWDIR%%/rainloop/v/1.6.9.164/app/domains
 @dirrmtry %%WWWDIR%%/rainloop/v/1.6.9.164/app/i18n/moment
 @dirrmtry %%WWWDIR%%/rainloop/v/1.6.9.164/app/i18n
