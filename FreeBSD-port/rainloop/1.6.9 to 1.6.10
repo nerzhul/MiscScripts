@@ -1,0 +1,47 @@
+--- Makefile.old	2014-10-06 12:21:13.437653841 +0200
++++ Makefile	2014-10-06 12:17:51.413662838 +0200
+@@ -1,7 +1,7 @@
+ # $FreeBSD: head/mail/rainloop/Makefile 370102 2014-10-05 18:35:33Z marino $
+ 
+ PORTNAME=	rainloop
+-PORTVERSION=	1.6.9
++PORTVERSION=	1.6.10
+ CATEGORIES?=	mail www
+ MASTER_SITES=	SF/${PORTNAME}-webmail/
+ 
+@@ -13,7 +13,7 @@
+ NO_WRKSUBDIR=	yes
+ WANT_PHP_WEB=	yes
+ USE_PHP=	curl iconv json xml dom openssl pcre spl zlib
+-RVER=		1.6.9.164
++RVER=		1.6.10.180
+ PLIST_SUB=	VER="${RVER}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
+ # @TODO: PDO also for different backends
+
+--- distinfo.old	2014-10-06 11:51:39.985650983 +0200
++++ distinfo	2014-10-06 11:52:10.453653944 +0200
+@@ -1,2 +1,2 @@
+-SHA256 (rainloop-1.6.9.zip) = c6f14be0fafec801109fefe79b085ca8cf49ffdac6bcb0b7eecdb505d438befe
+-SIZE (rainloop-1.6.9.zip) = 4723573
++SHA256 (rainloop-1.6.10.zip) = 1a2c045926db74cdf78386d43ecbde8146b61e893c41d2461e7700c3ce5ef20e
++SIZE (rainloop-1.6.10.zip) = 4752844
+
+--- pkg-plist.old	2014-10-06 11:51:45.792650474 +0200
++++ pkg-plist	2014-10-06 11:59:30.708664122 +0200
+@@ -788,6 +788,7 @@
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/it.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/ja-jp.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/ko-kr.ini
++%%WWWDIR%%/rainloop/v/%%VER%%/langs/lt.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/lv.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/nl.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/no.ini
+@@ -797,6 +798,7 @@
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/ro.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/ru.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/sk.ini
++%%WWWDIR%%/rainloop/v/%%VER%%/langs/sv.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/tr.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/ua.ini
+ %%WWWDIR%%/rainloop/v/%%VER%%/langs/zh-cn.ini
+
